@@ -1,69 +1,87 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="flex flex-col min-h-screen bg-white text-gray-900 font-sans">
+      <header className="sticky top-0 bg-white/80 backdrop-blur border-b border-gray-200 z-10">
+        <nav className="container mx-auto flex h-16 items-center justify-between px-6">
+          <Link href="/" className="text-2xl font-bold text-blue-600">
+            Minha Marca
+          </Link>
+          <div className="flex gap-6 text-sm font-medium">
+            <a href="#recursos" className="hover:text-blue-600 transition-colors">Recursos</a>
+            <a href="#sobre" className="hover:text-blue-600 transition-colors">Sobre</a>
+            <a href="#contato" className="hover:text-blue-600 transition-colors">Contato</a>
+          </div>
+        </nav>
+      </header>
+
+      <main className="flex-1">
+        <section className="container mx-auto flex flex-col items-center gap-12 px-6 py-24 text-center md:py-32">
+          <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight md:text-5xl">
+            Conectando ideias ao sucesso do seu negócio
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="max-w-2xl text-lg text-gray-600">
+            Uma landing page simples e moderna construída com Next.js e Tailwind CSS.
+            Rápida, acessível e pronta para escalar junto com seu crescimento.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contato"
+            className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-3 text-base font-medium text-white shadow-lg hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-colors"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
+            Comece agora
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
+
+        <section id="recursos" className="bg-gray-50 py-16">
+          <div className="container mx-auto px-6">
+            <h2 className="text-center text-3xl font-bold mb-12">Recursos</h2>
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="rounded-xl bg-white p-8 shadow-sm">
+                <h3 className="mb-3 text-xl font-semibold">Rápido e otimizado</h3>
+                <p className="text-gray-600">
+                  Renderização no servidor e carregamento otimizado garantem
+                  desempenho excepcional.
+                </p>
+              </div>
+              <div className="rounded-xl bg-white p-8 shadow-sm">
+                <h3 className="mb-3 text-xl font-semibold">Responsivo</h3>
+                <p className="text-gray-600">
+                  Layout adaptável a todos os dispositivos, do mobile ao desktop.
+                </p>
+              </div>
+              <div className="rounded-xl bg-white p-8 shadow-sm">
+                <h3 className="mb-3 text-xl font-semibold">Escalável</h3>
+                <p className="text-gray-600">
+                  Arquitetura modular que cresce com as necessidades do seu projeto.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sobre" className="container mx-auto px-6 py-20">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-bold mb-6">Sobre nós</h2>
+            <p className="text-lg text-gray-600">
+              Somos uma equina focada em transformar ideias em produtos digitais
+              que geram resultados reais. Com Next.js no coração, criamos
+              experiências rápidas e acessíveis para você e seus clientes.
+            </p>
+          </div>
+        </section>
       </main>
+
+      <footer id="contato" className="border-t border-gray-200 py-10">
+        <div className="container mx-auto flex flex-col items-center gap-4 px-6 text-center text-sm text-gray-500">
+          <p>&copy; {new Date().getFullYear()} Minha Marca. Todos os direitos reservados.</p>
+          <div className="flex gap-4">
+            <a href="mailto:contato@exemplo.com" className="hover:text-blue-600 transition-colors">
+              contato@exemplo.com
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
