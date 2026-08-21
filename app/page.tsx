@@ -9,7 +9,7 @@ export default function Home() {
           <Link href="/" className="text-2xl font-bold text-blue-600">
             Minha Marca
           </Link>
-          <div className="flex items-center gap-6 text-sm font-medium">
+          <div className="flex items-center gap-6 text-sm font-bold">
             <a href="#recursos" className="hover:text-blue-600 transition-colors">Recursos</a>
             <a href="#sobre" className="hover:text-blue-600 transition-colors">Sobre</a>
             <a href="#contato" className="hover:text-blue-600 transition-colors">Contato</a>
@@ -62,8 +62,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="sobre" className="container mx-auto px-6 py-20">
-          <div className="max-w-3xl">
+        <section id="sobre" className="container mx-auto px-6 py-20 text-center">
+          <div className="mx-30 align-middle">
             <h2 className="text-3xl font-bold mb-6">Sobre nós</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400">
               Somos uma equina focada em transformar ideias em produtos digitais
